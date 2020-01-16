@@ -1,0 +1,31 @@
+@font-face {
+    font-family: Pokemon-font;
+    src: url('Pokemon-font.ttf');
+}
+
+@font-face {
+    font-family: Pokemon-font-2;
+    src: url('Pokemon-font-2.ttf');
+}
+
+#main-header {
+    height: auto;
+    max-height: 10%;
+    width: 100%;
+    font-size: 15px;
+    background-color: #003A70;
+
+    display: flex;
+    font-family: Pokemon-font;
+    align-items: center;
+    justify-content: center;
+    border-color: black;
+    border-bottom: 1px solid;
+}
+
+#main-header h1 {
+    color: #FFCB05;
+    text-shadow: 1px 1px 1px #003A70;
+    text-emphasis: none;
+    font-weight: 50;
+}
