@@ -1,9 +1,14 @@
 # React Pokedex
 
+Author: [Pedro Henrico](https://github.com/romaniaph)
+
 ## What is React Pokedex?
  - React Pokedex is a simple Pokedex Web Interface using ReactJS and NodeJS
  
+ 
 ## To use this project, you will need run in terminal:
+
+
   ```sh
   npm install
   ```
@@ -13,6 +18,8 @@
   ```
   
 ## After installing the node_modules folder, run in terminal (on both sides):
+
+
    ```sh
    npm start
    ```
