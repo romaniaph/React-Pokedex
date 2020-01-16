@@ -44,8 +44,7 @@ export default class Pokemon extends Component {
 
     render() {
         const pokemon = this.state.pokemon
-        console.log(pokemon);
-        if (pokemon.types.length === 0) {
+        if (pokemon === null) {
             return <div id='content'>
                 <Link to='/' id='button'>Return</Link>
                 <div id="pokemon-info">

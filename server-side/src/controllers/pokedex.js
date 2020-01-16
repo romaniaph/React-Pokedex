@@ -41,39 +41,42 @@ module.exports = {
 
             pokemon = await P.getPokemonByName(pokemon.toLowerCase())
                 .then((response) => (response))
+                .catch((err) => (null))
 
-            for (i in pokemon.abilities) {
-                const ability = pokemon.abilities[i].ability.name
-                abilities.push({ ability });
-            }
+            if (pokemon != null) {
+                for (i in pokemon.abilities) {
+                    const ability = pokemon.abilities[i].ability.name
+                    abilities.push({ ability });
+                }
 
-            for (i in pokemon.types) {
-                const type = pokemon.types[i].type.name
-                types.push({ type });
-            }
+                for (i in pokemon.types) {
+                    const type = pokemon.types[i].type.name
+                    types.push({ type });
+                }
 
-            for (i in pokemon.game_indices) {
-                const game = pokemon.game_indices[i].version.name;
-                games.push({ game })
-            }
+                for (i in pokemon.game_indices) {
+                    const game = pokemon.game_indices[i].version.name;
+                    games.push({ game })
+                }
 
-            for (i in pokemon.moves) {
-                let move = pokemon.moves[i].move.name;
+                for (i in pokemon.moves) {
+                    let move = pokemon.moves[i].move.name;
 
-                moves.push({ move });
-            }
+                    moves.push({ move });
+                }
 
-            pokemon = {
-                id: pokemon.id,
-                name: pokemon.forms[0].name.toUpperCase(),
-                abilities: abilities,
-                height: pokemon.height,
-                weight: pokemon.weight,
-                image: pokemon.sprites.front_default,
-                imageshiny: pokemon.sprites.front_shiny,
-                types,
-                games,
-                moves
+                pokemon = {
+                    id: pokemon.id,
+                    name: pokemon.forms[0].name.toUpperCase(),
+                    abilities: abilities,
+                    height: pokemon.height,
+                    weight: pokemon.weight,
+                    image: pokemon.sprites.front_default,
+                    imageshiny: pokemon.sprites.front_shiny,
+                    types,
+                    games,
+                    moves
+                }
             }
 
             return res.json(pokemon);
