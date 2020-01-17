@@ -122,3 +122,18 @@ form {
     font-family: 'Roboto';
     font-size: 17px;
 }
+
+#loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+#loading span {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 30%;
+    height: auto;
+}
