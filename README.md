@@ -5,7 +5,7 @@
  - React Pokedex is a simple Pokedex Web Interface using ReactJS and NodeJS
  
  
-## To use this project, you will need run in terminal:
+## Install:
 
 
   ```sh
@@ -16,7 +16,7 @@
   yarn add
   ```
   
-## After installing the node_modules folder, run in terminal (on both sides):
+## Usage:
 
 
    ```sh
