@@ -1,6 +1,5 @@
 # React Pokedex
 
-Author: [Pedro Henrico](https://github.com/romaniaph)
 
 ## What is React Pokedex?
  - React Pokedex is a simple Pokedex Web Interface using ReactJS and NodeJS
