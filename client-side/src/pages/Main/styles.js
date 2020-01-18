@@ -81,7 +81,7 @@ export const InputText = styled.input`
 
 export const Btn = styled.button`
     margin: 20px;
-    width: 20%;
+    min-width: 20%;
     height: 70px;
     background-color: #d53141;
     color: white;

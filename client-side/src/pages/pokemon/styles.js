@@ -36,6 +36,11 @@ export const Container = styled.div`
     padding: 1%;
     padding-left: 10%;
     padding-right: 10%;
+
+    @media only screen and (max-width: 600px) {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
 `;
 
 export const NotFound = styled.span`
