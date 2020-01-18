@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
 import api from '../../services/api'
-import './styles.css'
-import img from './404.gif'
 import ReactLoading from 'react-loading';
+import { InputText, Form, Btn, SearchBtn, PokemonList, PokemonLi, Loading, Container } from './styles';
 
 export default function App(props) {
 
@@ -51,35 +49,35 @@ export default function App(props) {
         setValue(event.target.value)
     }
 
-    return <div>
-        <form onSubmit={(event) => HandleSubmit(event)}>
-            <input type="text" id="search" value={value} onChange={(event) => HandleChange(event)} placeholder='ID or name' />
-            <input type="submit" value="Search" id="SearchBtn" />
-        </form>
+    return <Container>
+        <Form onSubmit={(event) => HandleSubmit(event)}>
+            <InputText type="text" value={value} onChange={(event) => HandleChange(event)} placeholder='ID or name' />
+            <SearchBtn type="submit" value="Search" id="SearchBtn" />
+        </Form>
 
         {
             !done
                 ?
-                <span id='loading'>
+                <Loading>
                     <span>
                         <ReactLoading className='animation' height={'100%'} width={'100%'} type='bubbles' color={'#d53141'} />
                     </span>
-                </span>
+                </Loading>
                 :
-                <ul id="pokemon-list">
+                <PokemonList>
                     {
                         pokemons.map(pokemon => (
-                            <Link key={pokemon.id} id="pokemon-li" to={`/pokemon/${pokemon.id}`}>
+                            <PokemonLi key={pokemon.id} to={`/pokemon/${pokemon.id}`}>
                                 <span><h3>#{pokemon.id} {pokemon.name.toUpperCase()}</h3></span>
                                 <img src={pokemon.image} alt={pokemon.name} />
-                            </Link>
+                            </PokemonLi>
                         ))}
-                </ul>
+                </PokemonList>
         }
 
 
-        <button id="showMore" onClick={() => backPokemons()}>Previous</button>
-        <button id="showMore" onClick={() => nextPokemons()}>Next</button>
+        <Btn onClick={() => backPokemons()}>Previous</Btn>
+        <Btn onClick={() => nextPokemons()}>Next</Btn>
 
-    </div>
+    </Container>
 }
