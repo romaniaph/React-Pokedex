@@ -69,7 +69,6 @@ export const Form = styled.form`
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 1%;
 `;
 
 export const InputText = styled.input`
