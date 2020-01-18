@@ -8,8 +8,15 @@
  - The main page contains a lsit of pokémons and a search bar. 
  - You can navigate to pokemon detail clicking on it or searching by name/id.
  
+ ## Features: 
+ - JavaScript — a programming language;
+ - Node — a JavaScript runtime designed to build scalable network applications.
+ - React — a library to build web interfaces;
+ - Express — a Node framework to build APIs and web apps;
+ - Styled Components — CSS-in-JS;
+ 
 ## Install:
-
+With npm or yarn installed in your machine.
 
   ```sh
   npm install
