@@ -8,6 +8,7 @@ const animation = keyframes`
 
 export const PokemonList = styled.ul`
     margin: 20px;
+    padding-left:0 ;
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, auto));
