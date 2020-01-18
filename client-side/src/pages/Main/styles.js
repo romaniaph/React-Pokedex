@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const animation = keyframes`
     50% {
         background-color: white;
-    }`;
+    }`
 
 export const PokemonList = styled.ul`
     margin: 20px;
@@ -12,6 +12,8 @@ export const PokemonList = styled.ul`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, auto));
     grid-gap: 20px;
+    align-items: center;
+    justify-content: center;
 
     @media only screen and (max-width: 600px) { 
         margin: 5px;
@@ -144,6 +146,7 @@ export const Loading = styled.span`
 `;
 
 export const Container = styled.div`
+    padding: 2%;
     @media screen and (max-width: 600px) {
         display: flex;
         flex-direction: column;

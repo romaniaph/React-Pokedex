@@ -1,5 +1,4 @@
-import styled, {  } from 'styled-components';
-import Fonte from './Pokemon-font.ttf'
+import styled from 'styled-components';
 
 export const MainHeader = styled.header`
 
