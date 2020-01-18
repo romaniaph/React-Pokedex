@@ -23,6 +23,7 @@ export default function App(props) {
         const offset = pokemons[pokemons.length - 1].id;
         setDone(false);
         getPokemons(offset);
+        window.scrollTo(0, 0);
     }
 
 
@@ -34,8 +35,8 @@ export default function App(props) {
         else {
             getPokemons(offset - 20);
             setDone(false);
+            window.scrollTo(0, 0);
         }
-
     }
 
     function HandleSubmit(event) {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
 import './styles.css'
-import { Link } from 'react-router-dom';
+import { Container, Button, PokemonInfo, Title, Images, Stats, Games, Moves, Buttons, Global, NotFound } from './styles'
 import notfoundgif from './404.gif'
 
 export default function Pokemon(props) {
@@ -24,82 +24,88 @@ export default function Pokemon(props) {
                     );
                 });
         }
-
+        window.scrollTo(0, 0);
         fetchData();
     }, [props]);
 
-    if (pokemon === null) {
-        return <div id='content'>
-            <Link to='/' id='button'>Return</Link>
-            <div id="pokemon-info">
-                <span id='title'>
-                    <h1>Pokémon not found.</h1>
-                    <p>Please, return and try again.</p>
-                </span>
-                <span id='notfound'>
-                    <img src={notfoundgif} alt={notfoundgif} />
-                </span>
-            </div>
-        </div>
-    }
+    return <Container>
+        <Global></Global>
+        {
+            !pokemon
+                ?
+                <>
+                    <Button to='/'>Return</Button>
+                    <PokemonInfo>
+                        <Title>
+                            <h1>Pokémon not found.</h1>
+                            <p>Please, return and try again.</p>
+                        </Title>
+                        <NotFound>
+                            <img src={notfoundgif} alt={notfoundgif} />
+                        </NotFound>
+                    </PokemonInfo>
+                </>
+                :
+                <>
+                    <Button to='/'>Return</Button>
+                    <PokemonInfo>
+                        <Title>
+                            <h1>#{pokemon.id} {pokemon.name}</h1>
+                            <ul>
+                                {pokemon.types.map(response => (
+                                    <li key={response.type}>{response.type}</li>
+                                ))}
+                            </ul>
+                        </Title>
 
-    if (pokemon) {
-        return <div id='content'>
-            <Link to='/' id='button'>Return</Link>
-            <div id="pokemon-info">
-                <span id='title'>
-                    <h1>#{pokemon.id} {pokemon.name}</h1>
-                    <ul>
-                        {pokemon.types.map(response => (
-                            <li key={response.type}>{response.type}</li>
-                        ))}
-                    </ul>
-                </span>
+                        <Images>
+                            <img src={pokemon.image} alt={pokemon.image} />
+                            <img src={pokemon.imageshiny} alt={pokemon.imageshiny} />
+                        </Images>
 
-                <span id='images'>
-                    <img src={pokemon.image} alt={pokemon.image} />
-                    <img src={pokemon.imageshiny} alt={pokemon.imageshiny} />
-                </span>
+                        <Stats>
+                            <span>
+                                <h2>Abilities:</h2>
+                                <ul>
+                                    {pokemon.abilities.map(response => (
+                                        <li key={response.ability}>{response.ability}</li>
+                                    ))}
+                                </ul>
+                            </span>
+                            <span>
+                                <h2>Characteristics:</h2>
+                                <p>Height: {pokemon.height}dm</p>
+                                <p>Weight: {pokemon.weight}hg</p>
+                            </span>
+                        </Stats>
 
-                <span id='stats'>
-                    <span>
-                        <h2>Abilities:</h2>
-                        <ul>
-                            {pokemon.abilities.map(response => (
-                                <li key={response.ability}>{response.ability}</li>
-                            ))}
-                        </ul>
-                    </span>
-                    <span>
-                        <h2>Characteristics:</h2>
-                        <p>Height: {pokemon.height}dm</p>
-                        <p>Weight: {pokemon.weight}hg</p>
-                    </span>
-                </span>
-                <span id='games'>
-                    <h2>Games:</h2>
-                    <ul>
-                        {pokemon.games.map(response => (
-                            <li key={response.game}>{response.game}</li>
-                        ))}
-                    </ul>
-                </span>
-                <span id='moves'>
-                    <h2>Moves:</h2>
-                    <ul>
-                        {pokemon.moves.map(response => (
-                            <li key={response.move}>{response.move}</li>
-                        ))}
-                    </ul>
-                </span>
-                <span id='buttons'>
-                    <Link id='button' to={() => {
-                        if (pokemon.id !== 1)
-                            return (`/pokemon/${pokemon.id - 1}`)
-                    }}>Previous</Link>
-                    <Link id='button' to={`/pokemon/${pokemon.id + 1}`}>Next</Link>
-                </span>
-            </div>
-        </div>
-    }
+                        <Games>
+                            <h2>Games:</h2>
+                            <ul>
+                                {pokemon.games.map(response => (
+                                    <li key={response.game}>{response.game}</li>
+                                ))}
+                            </ul>
+                        </Games>
+
+                        <Moves>
+                            <h2>Moves:</h2>
+                            <ul>
+                                {pokemon.moves.map(response => (
+                                    <li key={response.move}>{response.move}</li>
+                                ))}
+                            </ul>
+                        </Moves>
+                        <Buttons>
+                            <Button to={() => {
+                                if (pokemon.id !== 1)
+                                    return (`/pokemon/${pokemon.id - 1}`)
+                            }}>Previous</Button>
+                            <Button to={`/pokemon/${pokemon.id + 1}`}>Next</Button>
+                        </Buttons>
+                    </PokemonInfo>
+                </>
+        }
+    </Container>
 }
+

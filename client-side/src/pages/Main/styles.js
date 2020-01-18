@@ -1,11 +1,10 @@
-import styled, { keyframes, GlobalStyleComponent } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom'
-
 
 const animation = keyframes`
     50% {
         background-color: white;
-    }`
+    }`;
 
 export const PokemonList = styled.ul`
     margin: 20px;
@@ -145,7 +144,8 @@ export const Loading = styled.span`
 `;
 
 export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
+    @media screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+    }
 `;
-
