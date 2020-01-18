@@ -1,8 +1,9 @@
 import React from 'react';
-import './styles.css'
+import './styles'
+import { MainFooter } from './styles';
 
 const Footer = () => (
-    <footer id='main-footer'>Created by Pedro Henrico - React and NodeJS | 2020</footer>
+    <MainFooter id='main-footer'>Created by Pedro Henrico - React and NodeJS | 2020</MainFooter>
 );
 
 export default Footer;

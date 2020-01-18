@@ -1,4 +1,6 @@
-#main-footer {
+import styled from 'styled-components';
+
+export const MainFooter = styled.footer`
     background-color: #003A70;
     height: 38px;
     width: 100%;
@@ -10,10 +12,8 @@
     color: white;
     position: relative;
     bottom: 0;
-}
 
-@media only screen and (max-width: 600px) {
-    #main-footer {
+    @media only screen and (max-width: 600px) {
         font-size: 11px;
-    }
 }
+`;
