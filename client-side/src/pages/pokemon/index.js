@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
-import './styles.css'
 import { Container, Button, PokemonInfo, Title, Images, Stats, Games, Moves, Buttons, Global, NotFound } from './styles'
 import notfoundgif from './404.gif'
 
