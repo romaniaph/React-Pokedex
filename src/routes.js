@@ -8,7 +8,7 @@ const routes = () => (
     <BrowserRouter>
         <Switch>
             <Route path={process.env.PUBLIC_URL + '/'} exact component={Main} />
-            <Route path='/pokemon/:id' component={Pokemon} />
+            <Route path={process.env.PUBLIC_URL +'/pokemon/:id'} component={Pokemon} />
         </Switch>
     </BrowserRouter>
 )
