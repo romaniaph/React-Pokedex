@@ -21,6 +21,9 @@ export default function Pokemon(props) {
                     setPokemon(
                         response.data
                     );
+                })
+                .catch((response) => {
+                    setPokemon(null);
                 });
         }
         window.scrollTo(0, 0);
