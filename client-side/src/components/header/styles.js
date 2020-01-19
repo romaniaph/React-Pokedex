@@ -20,4 +20,8 @@ export const MainHeader = styled.header`
         text-emphasis: none;
         font-weight: 50;
     }
+
+    @media only screen and (max-width: 600px) {
+        padding: 2%;
+    }
 `;
