@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 const api = Axios.create({
-    baseURL: 'http://localhost:3000/pokedex-api'
+    baseURL: 'https://react-pokedex-romaniaph.herokuapp.com'
 })
 
 export default api;
