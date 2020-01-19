@@ -22,7 +22,7 @@ export default function Pokemon(props) {
                         response.data
                     );
                 })
-                .catch((response) => {
+                .catch(() => {
                     setPokemon(null);
                 });
         }
@@ -101,9 +101,9 @@ export default function Pokemon(props) {
                         <Buttons>
                             <Button to={() => {
                                 if (pokemon.id !== 1)
-                                    return (`/pokemon/${pokemon.id - 1}`)
+                                    return (process.env.PUBLIC_URL + `/pokemon/${pokemon.id - 1}`)
                             }}>Previous</Button>
-                            <Button to={`/pokemon/${pokemon.id + 1}`}>Next</Button>
+                            <Button to={process.env.PUBLIC_URL + `/pokemon/${pokemon.id + 1}`}>Next</Button>
                         </Buttons>
                     </PokemonInfo>
                 </>
