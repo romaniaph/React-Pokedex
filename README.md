@@ -2,6 +2,7 @@
 
 - This repo is only the front-end.
 - [Back-end](https://github.com/romaniaph/react-pokedex-server)
+- See the project working [here](https://romaniaph.github.io/react-pokedex-client/)
 
 ## What is React Pokedex?
  - React Pokedex is a simple Pokedex Web Interface using ReactJS and NodeJS.
