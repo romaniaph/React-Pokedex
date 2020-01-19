@@ -7,7 +7,7 @@ import Pokemon from './pages/pokemon';
 const routes = () => (
     <BrowserRouter>
         <Switch>
-            <Route path='/' exact component={Main} />
+            <Route path={process.env.PUBLIC_URL + '/'} exact component={Main} />
             <Route path='/pokemon/:id' component={Pokemon} />
         </Switch>
     </BrowserRouter>
