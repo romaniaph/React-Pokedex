@@ -43,7 +43,7 @@ export default function App(props) {
         event.preventDefault();
 
         if (value.trim())
-            props.history.push(`/pokemon/${value}`);
+            props.history.push(process.env.PUBLIC_URL + `/pokemon/${value}`);
     }
 
     function HandleChange(event) {
@@ -68,7 +68,7 @@ export default function App(props) {
                 <PokemonList>
                     {
                         pokemons.map(pokemon => (
-                            <PokemonLi key={pokemon.id} to={`/pokemon/${pokemon.id}`}>
+                            <PokemonLi key={pokemon.id} to={process.env.PUBLIC_URL + `/pokemon/${pokemon.id}`}>
                                 <span><h3>#{pokemon.id} {pokemon.name.toUpperCase()}</h3></span>
                                 <img src={pokemon.image} alt={pokemon.name} />
                             </PokemonLi>
