@@ -36,7 +36,7 @@ export default function Pokemon(props) {
             !pokemon
                 ?
                 <>
-                    <Button to='/'>Return</Button>
+                    <Button to={process.env.PUBLIC_URL + '/'}>Return</Button>
                     <PokemonInfo>
                         <Title>
                             <h1>Pokémon not found.</h1>
@@ -49,7 +49,7 @@ export default function Pokemon(props) {
                 </>
                 :
                 <>
-                    <Button to='/'>Return</Button>
+                    <Button to={process.env.PUBLIC_URL + '/'}>Return</Button>
                     <PokemonInfo>
                         <Title>
                             <h1>#{pokemon.id} {pokemon.name}</h1>
