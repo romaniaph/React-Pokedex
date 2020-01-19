@@ -22,6 +22,6 @@ export const MainHeader = styled.header`
     }
 
     @media only screen and (max-width: 600px) {
-        padding: 2%;
+        padding: 3%;
     }
 `;
