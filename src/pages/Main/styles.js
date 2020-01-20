@@ -7,11 +7,10 @@ const animation = keyframes`
     }`
 
 export const PokemonList = styled.ul`
-    margin: 20px;
-    padding-left:0 ;
+    padding:0 ;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+    grid-template-columns: repeat(auto-fill, minmax(auto, 150px));
     grid-gap: 20px;
     align-items: center;
     justify-content: center;
@@ -147,8 +146,20 @@ export const Loading = styled.span`
 
 export const Container = styled.div`
     padding: 2%;
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     @media screen and (max-width: 600px) {
         display: flex;
         flex-direction: column;
+
+        span {
+            display: flex;
+            flex-direction: column;
+        }
     }
 `;

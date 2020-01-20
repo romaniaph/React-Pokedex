@@ -75,10 +75,9 @@ export default function App(props) {
                         ))}
                 </PokemonList>
         }
-
-
-        <Btn onClick={() => backPokemons()}>Previous</Btn>
-        <Btn onClick={() => nextPokemons()}>Next</Btn>
-
+        <span>
+            <Btn onClick={() => backPokemons()}>Previous</Btn>
+            <Btn onClick={() => nextPokemons()}>Next</Btn>
+        </span>
     </Container>
 }
