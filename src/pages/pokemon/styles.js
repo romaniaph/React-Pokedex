@@ -43,24 +43,6 @@ export const Container = styled.div`
     }
 `;
 
-export const NotFound = styled.span`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    img {
-        width: 100%;
-        height: auto;
-    }
-
-    @media only screen and (max-width: 600px) {
-        img {
-            width: 100%;
-        }
-    }
-`;
-
 export const PokemonInfo = styled.div`
     background-color: #d53141;
     height: auto;

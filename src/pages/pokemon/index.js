@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
-import { Container, Button, PokemonInfo, Title, Images, Stats, Games, Moves, Buttons, Global, NotFound } from './styles'
-import notfoundgif from './404.gif'
-
+import { Container, Button, PokemonInfo, Title, Images, Stats, Games, Moves, Buttons, Global } from './styles'
+import NotFound from '../../components/notfound';
 export default function Pokemon(props) {
 
     const [pokemon, setPokemon] = useState({
@@ -36,16 +35,7 @@ export default function Pokemon(props) {
             !pokemon
                 ?
                 <>
-                    <Button to={process.env.PUBLIC_URL + '/'}>Return</Button>
-                    <PokemonInfo>
-                        <Title>
-                            <h1>Pokémon not found.</h1>
-                            <p>Please, return and try again.</p>
-                        </Title>
-                        <NotFound>
-                            <img src={notfoundgif} alt={notfoundgif} />
-                        </NotFound>
-                    </PokemonInfo>
+                    <NotFound />
                 </>
                 :
                 <>
