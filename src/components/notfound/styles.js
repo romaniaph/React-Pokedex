@@ -1,6 +1,19 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const Container = styled.div`
+    height: 100%;
+    width: 100%;
+    padding: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    @media only screen and (max-width: 600px) {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+`;
+
 export const Button = styled(Link)`
     text-decoration: none;
     background-color: #003A70;
