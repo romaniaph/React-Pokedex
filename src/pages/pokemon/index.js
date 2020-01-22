@@ -89,11 +89,17 @@ export default function Pokemon(props) {
 
                         <Moves>
                             <h2>Moves:</h2>
-                            <ul>
-                                {pokemon.moves.map(response => (
-                                    <li key={response.move}>{response.move}</li>
-                                ))}
-                            </ul>
+                            {
+                                pokemon.moves.lenght === 0
+                                    ?
+                                    <p>No moves to show</p>
+                                    :
+                                    <ul>
+                                        {pokemon.moves.map(response => (
+                                            <li key={response.move}>{response.move}</li>
+                                        ))}
+                                    </ul>
+                            }
                         </Moves>
                         <Buttons>
                             <Button to={() => {
