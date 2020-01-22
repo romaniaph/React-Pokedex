@@ -90,6 +90,7 @@ export const Images = styled.span`
         background-color: white;
         border-radius: 100px;
         margin: 1%;
+        max-height: 96px
     }
 `;
 
