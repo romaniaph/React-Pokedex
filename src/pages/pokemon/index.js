@@ -73,15 +73,17 @@ export default function Pokemon(props) {
 
                         <Games>
                             <h2>Games:</h2>
-                            !pokemon.games
-                            ?
-                            <p>No games to show</p>
-                            :
-                            <ul>
-                                {pokemon.games.map(response => (
-                                    <li key={response.game}>{response.game}</li>
-                                ))}
-                            </ul>
+                            {
+                                !pokemon.games
+                                    ?
+                                    <p>No games to show</p>
+                                    :
+                                    <ul>
+                                        {pokemon.games.map(response => (
+                                            <li key={response.game}>{response.game}</li>
+                                        ))}
+                                    </ul>
+                            }
                         </Games>
 
                         <Moves>
