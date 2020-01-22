@@ -27,6 +27,7 @@ export default function Pokemon(props) {
         }
         window.scrollTo(0, 0);
         fetchData();
+        console.log(pokemon.games);
     }, [props]);
 
     return <Container>
