@@ -75,7 +75,7 @@ export default function Pokemon(props) {
                         <Games>
                             <h2>Games:</h2>
                             {
-                                !pokemon.games.length === 0
+                                pokemon.games.length === 0
                                     ?
                                     <p>No games to show</p>
                                     :
