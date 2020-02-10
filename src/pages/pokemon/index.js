@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
 import { Container, Button, PokemonInfo, Title, Images, Stats, Games, Moves, Buttons, Global } from './styles'
 import NotFound from '../../components/notfound';
+
 export default function Pokemon(props) {
 
     const [pokemon, setPokemon] = useState({
