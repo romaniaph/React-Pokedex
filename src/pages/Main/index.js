@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import api from '../../services/api'
 import ReactLoading from 'react-loading';
-import { InputText, Form, Btn, SearchBtn, PokemonList, PokemonLi, Loading, Container } from './styles';
+
+import api from '../../services/api'
+import PokemonItem from '../../components/pokemonItem'
+import { Button } from '../globalStyle'
+import { InputText, Form, Buttons, SearchBtn, PokemonList, Loading, Container } from './styles';
 
 export default function App(props) {
 
@@ -68,16 +71,14 @@ export default function App(props) {
                 <PokemonList>
                     {
                         pokemons.map(pokemon => (
-                            <PokemonLi key={pokemon.id} to={process.env.PUBLIC_URL + `/pokemon/${pokemon.id}`}>
-                                <span><h3>#{pokemon.id} {pokemon.name.toUpperCase()}</h3></span>
-                                <img src={pokemon.image} alt={pokemon.name} />
-                            </PokemonLi>
+                            <PokemonItem pokemon={pokemon} key={pokemon.id} />
                         ))}
                 </PokemonList>
         }
-        <span>
-            <Btn onClick={() => backPokemons()}>Previous</Btn>
-            <Btn onClick={() => nextPokemons()}>Next</Btn>
-        </span>
+
+        <Buttons>
+            <Button onClick={() => backPokemons()}>Previous</Button>
+            <Button onClick={() => nextPokemons()}>Next</Button>
+        </Buttons>
     </Container>
 }

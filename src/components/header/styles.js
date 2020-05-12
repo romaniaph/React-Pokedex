@@ -4,7 +4,7 @@ export const MainHeader = styled.header`
     height: auto;
     max-height: 10%;
     width: 100%;
-    font-size: 15px;
+    font-size: 2.5vh;
     background-color: #003A70;
     display: flex;
     font-family: Pokemon-font;

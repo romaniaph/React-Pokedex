@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-    height: 100%;
+    min-height: 100vh;
     width: 100%;
     padding: 1%;
     padding-left: 10%;
@@ -14,31 +13,8 @@ export const Container = styled.div`
     }
 `;
 
-export const Button = styled(Link)`
-    text-decoration: none;
-    background-color: #003A70;
-    width: 15%;
-    border-radius: 10px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    color: white;
-    border: none;
-    cursor: pointer;
-
-    :hover {
-        opacity: 0.9;
-    }
-
-    @media screen and (max-width: 600px) {
-        min-width: 100%;
-        margin-bottom: 1%;
-    }
-`;
-
 export const NotFound = styled.span`
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,12 +22,14 @@ export const NotFound = styled.span`
 
     img {
         width: 100%;
-        height: auto;
+        height: 100%;
     }
 
     @media only screen and (max-width: 600px) {
         img {
             width: 100%;
+            height: 90vh;
+            object-fit: cover;
         }
     }
 `;

@@ -3,43 +3,49 @@ import { Link } from 'react-router-dom';
 
 export const Global = createGlobalStyle`
     li {
-        min-height: 28px;
+        height: 5vh;
         background-color: #b4acbd;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 2px;
         margin: 2px;
-        min-width: 60%;
-        max-width: auto;
-        font-size: 15px
+        width: 100%;
+        font-size: 2vh;
     }
 
     p {
-        font-size: 16px;
+        font-size: 2vh;
+    }
+
+    h2, h3 {
+        font-size: 3vh;
     }
 
     ul {
         list-style: none;
         width: 100%;
         display: grid;
-        align-items: flex-start;
-        grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+        justify-content: center;
+        grid-template-columns: repeat(auto-fill, 9vw);
         padding: 3%;
-        gap: 3px
+        grid-gap: 1vh;
+
+        
+        @media only screen and (max-width: 600px) {
+            grid-template-columns: 100%;
+        }
     }
 `;
 
 export const Container = styled.div`
     height: 100%;
     width: 100%;
-    padding: 1%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 0 10%;
 
+    
     @media only screen and (max-width: 600px) {
-        padding-left: 2%;
-        padding-right: 2%;
+        padding: 0 1%;
     }
 `;
 
@@ -62,61 +68,54 @@ export const Title = styled.span`
     justify-content: center;
     padding: 2%;
 
+    @media only screen and (max-width: 600px) {
+        padding: 5%;
+    }
+
     ul {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-
-    @media screen and (max-width: 600px) {
-        h1 {
-            font-size: 18px;
-            max-width: 100%;
-        }
-    }
 `;
 
 export const Images = styled.span`
     display: flex;
+    align-self: center;
     align-items: center;
     justify-content: center;
     width: 100%;
     min-height: auto;
-    height: 100%;
     padding: 1%;
 
     img {
         background-color: white;
-        border-radius: 100px;
-        margin: 1%;
-        max-height: 96px
+        border-radius: 50%;
+        margin: 0 1%;
+        height: 20vh;
     }
 `;
 
 export const Stats = styled.span`
     background-color: white;
     border-radius: 3px;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 1%;
+    margin: 1% 5%;
     padding: 2%;
     display: flex;
+    align-items: center;
     justify-content: space-around;
 
-    @media only screen and (max-width: 600px) {
-        font-size: 12px;
-        flex-direction: column;
-        margin-top: 2%;
-        max-width: 100%;
     
-        span {
-            margin-top: 2%;
-            margin-bottom: 2%;
-            padding: 5%;
-            max-width: 100%;
-        }
-}
+    span {
+        width: 100%;
+        padding: 0 5%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        padding: 10% 0;
+    }
 `;
 
 export const Games = styled.span`
@@ -126,11 +125,9 @@ export const Games = styled.span`
     margin-bottom: 1%;
     border-radius: 3px;
     padding: 3%;
-
-    @media screen and (max-width: 600px) {
-        padding: 5%;
-    }
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 export const Moves = styled.span`
@@ -141,36 +138,24 @@ export const Moves = styled.span`
     padding: 3%;
     border-radius: 3px;
     padding: 5%;
-
-    @media screen and (max-width: 600px) {
-        padding: 5%;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
-export const Buttons = styled.span`
-    background-color: none;
-    margin-left: 5%;
-    margin-right: 5%;
+export const Buttons = styled.div`
+    width: 100%;
+    margin: 3% 0;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
-    a {
-        text-decoration: none;
+    button {
         background-color: #003A70;
-        width: 20%;
-        border-radius: 10px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        color: white;
     }
 
     @media only screen and (max-width: 600px) {
-        align-items: flex;
-        flex-direction: column;
+        flex-direction: column
     }
 `;
 
@@ -190,10 +175,5 @@ export const Button = styled(Link)`
 
     :hover {
         opacity: 0.9;
-    }
-
-    @media screen and (max-width: 600px) {
-        min-width: 100%;
-        margin-bottom: 1%;
     }
 `;

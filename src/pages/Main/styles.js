@@ -1,17 +1,11 @@
-import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom'
-
-const animation = keyframes`
-    50% {
-        background-color: white;
-    }`
+import styled from 'styled-components';
 
 export const PokemonList = styled.ul`
-    padding:0 ;
+    padding: auto;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(auto, 150px));
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, 12vw);
+    grid-gap: 2vh;
     align-items: center;
     justify-content: center;
 
@@ -20,46 +14,6 @@ export const PokemonList = styled.ul`
         list-style: none;
         display: grid;
         grid-template-columns: 100%;
-    }
-
-    span {
-        text-align: center;
-        background-color: white;
-        border-radius: 5px;
-        font-size: 10px;
-        height: 100%;
-        justify-content: center;
-        padding: 10%;
-        align-items: center;
-        font-family: 'Roboto';
-
-        @media screen and (max-width: 600px){
-            padding: 5%;
-        }
-}
-`;
-
-export const PokemonLi = styled(Link)`
-    color: black;
-    min-width: 150px;
-    max-height: 200px;
-    background-color: #d53141;
-    border-radius: 4px;
-    display: grid;
-    align-items: center;
-    justify-content: stretch;
-    cursor: pointer;
-    text-decoration: none;
-
-    :hover {
-        animation: ${animation} 2s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-    }
-
-    img {
-        background-color: white;
-        border-radius: 50px;
     }
 `;
 
@@ -72,48 +26,36 @@ export const Form = styled.form`
 
 export const InputText = styled.input`
     width: 50%;
-    padding: 5px;
+    padding: 0.5%;
     border-radius: 2px;
     font-family: 'Roboto';
-    font-size: 17px;
+    font-size: 2.5vh;
+    border: none;
+    border: 1px solid #d53141;
 `;
 
-export const Btn = styled.button`
-    margin: 20px;
-    min-width: 20%;
-    height: 70px;
-    background-color: #d53141;
-    color: white;
-    font-family: 'Roboto';
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
-
-    :hover {
-        opacity: 0.8;
-    }
+export const Buttons = styled.div`
+    width: 80%;
+    margin: 5% 0;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: space-evenly;
 
     @media only screen and (max-width: 600px) {
-        text-align: center;
-        border-radius: 2px;
-        font-size: 15px;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Roboto';
-        padding: 5%;
-        min-width: 80%;
+        flex-direction: column
     }
 `;
 
+
 export const SearchBtn = styled.input`
-    margin: 20px;
+    margin: 2%;
     min-width: 10%;
-    height: 30px;
+    height: 5vh;
     background-color: #d53141;
     color: white;
     font-family: 'Roboto';
-    font-size: 16px;
+    font-size: 2.5vh;
     border: none;
     cursor: pointer;
     border-radius: 3px;
@@ -146,12 +88,8 @@ export const Loading = styled.span`
 
 export const Container = styled.div`
     padding: 2%;
-
-    span {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+    display: flex;
+    flex-direction: column;
 
     @media screen and (max-width: 600px) {
         display: flex;

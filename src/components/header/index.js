@@ -4,7 +4,9 @@ import './styles.css'
 
 const Header = () => (
     <>
-    <MainHeader ><h1>React Pokedex</h1></MainHeader>
+        <MainHeader >
+            <h1>React Pokedex</h1>
+        </MainHeader>
     </>
 );
 

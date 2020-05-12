@@ -1,11 +1,18 @@
 import React from 'react'
-import { Button, PokemonInfo, Title, NotFound, Container } from './styles';
+import { Link } from 'react-router-dom';
+
+import { Button } from '../../pages/globalStyle'
+import { PokemonInfo, Title, NotFound, Container } from './styles';
 import notfoundgif from './404.gif'
 
 const App = () => (
     <>
         <Container>
-            <Button to={process.env.PUBLIC_URL + '/'}>Return</Button>
+            <Button >
+                <Link to={process.env.PUBLIC_URL + '/'}>
+                    Return
+                </Link>
+            </Button>
             <PokemonInfo>
                 <Title>
                     <h1>Page not found.</h1>
